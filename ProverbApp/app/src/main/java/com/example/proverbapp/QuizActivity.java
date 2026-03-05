@@ -70,7 +70,7 @@ public class QuizActivity extends AppCompatActivity {
             return;
         }
 
-        databaseReference = FirebaseDatabase.getInstance("https://proverb-5dcf7-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
+        databaseReference = FirebaseDatabase.getInstance("https://proverbproject-8dd2e-default-rtdb.firebaseio.com/").getReference();
 
         loadNewQuestion();
 

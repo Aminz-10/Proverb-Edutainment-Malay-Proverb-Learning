@@ -1,5 +1,6 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E9F6F7">
@@ -63,9 +64,9 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/person"
-                android:tint="#808080"
                 android:padding="5dp"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                app:tint="#808080" />
 
             <EditText
                 android:id="@+id/yourName"
@@ -98,8 +99,8 @@
                 android:layout_height="20dp"
                 android:src="@drawable/email"
                 android:padding="5dp"
-                android:tint="#808080"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                app:tint="#808080" />
 
             <EditText
                 android:id="@+id/yourEmail"
@@ -130,8 +131,8 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_password"
                 android:padding="5dp"
+                android:src="@drawable/ic_password"
                 android:layout_gravity="center_vertical" />
 
             <EditText
@@ -163,8 +164,8 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_password"
                 android:padding="5dp"
+                android:src="@drawable/ic_password"
                 android:layout_gravity="center_vertical" />
 
             <EditText

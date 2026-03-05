@@ -53,7 +53,7 @@ public class ExtraQuizActivity extends AppCompatActivity {
         // Initialize Firebase
         FirebaseAuth auth = FirebaseAuth.getInstance();
         userId = auth.getCurrentUser() != null ? auth.getCurrentUser().getUid() : null;
-        databaseReference = FirebaseDatabase.getInstance("https://proverb-5dcf7-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        databaseReference = FirebaseDatabase.getInstance("https://proverbproject-8dd2e-default-rtdb.firebaseio.com/")
                 .getReference();
 
         // Initialize views

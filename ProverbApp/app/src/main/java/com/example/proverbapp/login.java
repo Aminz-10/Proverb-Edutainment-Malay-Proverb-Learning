@@ -123,18 +123,43 @@ public class login extends AppCompatActivity {
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        Log.d("GoogleSignIn", "firebaseAuthWithGoogle:" + acct.getId());
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
+
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
-                            fetchUserFromFirestore(user.getUid());
+
+                            String uid = user.getUid();
+
+                            firestore.collection("users").document(uid).get()
+                                    .addOnSuccessListener(documentSnapshot -> {
+
+                                        if (documentSnapshot.exists()) {
+                                            // User already exists
+                                            fetchUserFromFirestore(uid);
+
+                                        } else {
+                                            // First time Google login → create user
+
+                                            String name = user.getDisplayName();
+                                            String email = user.getEmail();
+
+                                            User newUser = new User(name, email);
+
+                                            firestore.collection("users").document(uid)
+                                                    .set(newUser)
+                                                    .addOnSuccessListener(aVoid -> {
+                                                        Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show();
+                                                        fetchUserFromFirestore(uid);
+                                                    });
+                                        }
+                                    });
                         }
+
                     } else {
-                        Log.w("GoogleSignIn", "signInWithCredential:failure", task.getException());
                         Toast.makeText(this, "Authentication Failed.", Toast.LENGTH_SHORT).show();
                     }
                 });

@@ -70,10 +70,10 @@ public class Home extends AppCompatActivity {
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance();
         String userId = auth.getCurrentUser() != null ? auth.getCurrentUser().getUid() : "unknown_user";
-        userRef = FirebaseDatabase.getInstance("https://proverb-5dcf7-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        userRef = FirebaseDatabase.getInstance("https://proverbproject-8dd2e-default-rtdb.firebaseio.com/")
                 .getReference("users").child(userId);
 
-        databaseReference = FirebaseDatabase.getInstance("https://proverb-5dcf7-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        databaseReference = FirebaseDatabase.getInstance("https://proverbproject-8dd2e-default-rtdb.firebaseio.com/")
                 .getReference("users");
 
         // Load user name from Firestore or Realtime Database

@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.proverbapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.proverbapp"
@@ -44,6 +44,10 @@ dependencies {
     implementation ("androidx.annotation:annotation:1.6.0")
     implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation("androidx.credentials:credentials:1.5.0")
+    implementation("com.google.android.gms:play-services-base:18.5.0")
+    implementation("androidx.credentials:credentials-play-services-auth:1.5.0")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.2.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
 
     implementation(libs.appcompat)

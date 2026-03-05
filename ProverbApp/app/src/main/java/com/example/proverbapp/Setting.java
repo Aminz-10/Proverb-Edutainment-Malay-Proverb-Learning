@@ -45,7 +45,7 @@ public class Setting extends AppCompatActivity {
         // Initialize Firebase
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
-        databaseReference = FirebaseDatabase.getInstance("https://proverb-5dcf7-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        databaseReference = FirebaseDatabase.getInstance("https://proverbproject-8dd2e-default-rtdb.firebaseio.com/")
                 .getReference("users");
 
         // Initialize views
