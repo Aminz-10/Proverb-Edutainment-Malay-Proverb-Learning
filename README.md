@@ -31,7 +31,7 @@ The system aims to:
 
 | Layer | Description |
 |--------|-------------|
-| 🎨 **Frontend** | Mobile application interface for learners (Flutter / Android Studio) |
+| 🎨 **Frontend** | Mobile application interface for learners (Android Studio) |
 | 🔧 **Backend** | Firebase Authentication & Firestore Database for storing user data and quiz results |
 | 📦 **Database** | Stores proverb list, examples, user progress, and quiz questions |
 
